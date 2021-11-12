@@ -1,7 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
-# from bs4 import BeautifulSoup
+from soup import Soupify
 
 
 def Start(storeNumber):
@@ -30,6 +30,7 @@ def Start(storeNumber):
         f'{storeNum} is located at {street} {city}, {state} {zipcode}. The phone number is {phone}')
     source = driver.page_source
     driver.quit()
+    Soupify(source)
 
 
 Start(1232)

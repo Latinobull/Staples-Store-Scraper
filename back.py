@@ -15,8 +15,6 @@ def Start(storeNumber):
     driver = webdriver.Chrome(PATH, chrome_options=options)
     driver.get(PAGE)
 
-    text = driver.find_element(By.CLASS_NAME, 'Teaser-titleLink').text
-    print(text)
     driver.find_element(By.CLASS_NAME, 'Teaser-titleLink').click()
     source = driver.page_source
     driver.quit()

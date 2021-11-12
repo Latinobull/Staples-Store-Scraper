@@ -12,5 +12,9 @@ def Soupify(source):
     for item in all:
         d['Street'] = item.find(
             'span', {'class': 'c-address-street-1'}).text
+        d['City'] = item.find('span', {'class': 'c-address-city'}).text
+        d['State'] = item.find('abbr', {'class': 'c-address-state'}).text
+        d['Zipcode'] = item.find(
+            'span', {'class': 'c-address-postal-code'}).text
     l.append(d)
     print(l)

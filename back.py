@@ -9,6 +9,7 @@ def Start(storeNumber):
     PAGE = f"https://stores.staples.com/search?storeId={storeNumber}&qp={storeNumber}&l=en"
 
     options = webdriver.ChromeOptions()
+    options.add_argument('--ignore-certificate-errors')
     options.add_argument('--incognito')
     options.add_argument('--headless')
     driver = webdriver.Chrome(PATH, chrome_options=options)
@@ -27,6 +28,7 @@ def Start(storeNumber):
     phone = str(driver.find_element(By.ID, 'phone-main').text)
     print(
         f'{storeNum} is located at {street} {city}, {state} {zipcode}. The phone number is {phone}')
+    source = driver.page_source
     driver.quit()
 
 

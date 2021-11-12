@@ -23,7 +23,8 @@ def Start(storeNumber):
         zipcode = driver.find_element(
             By.CLASS_NAME, 'c-address-postal-code').text
         phone = str(driver.find_element(By.ID, 'phone-main').text)
-        print(f'{storeNum} is located at {street} {city}, {state} {zipcode}. The phone number is {phone}   ')
+        print(
+            f'{storeNum} is located at {street} {city}, {state} {zipcode}. The phone number is {phone}')
         driver.quit()
         break
 

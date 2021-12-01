@@ -1,12 +1,11 @@
 from bs4 import BeautifulSoup
 
 
-def Soupify(source):
+def Soupify(source, storeList):
     soup = BeautifulSoup(source, 'html.parser')
     all = soup.find_all('div', {'class': 'Main-core'})
     # print(all)
 
-    l = []
     d = {}
     d['Store#'] = soup.find('div', {'class': 'Core-storeId'}).text
     for item in all:
@@ -16,5 +15,5 @@ def Soupify(source):
         d['State'] = item.find('abbr', {'class': 'c-address-state'}).text
         d['Zipcode'] = item.find(
             'span', {'class': 'c-address-postal-code'}).text
-    l.append(d)
-    print(l)
+    storeList.append(d)
+    print(storeList)

@@ -1,4 +1,5 @@
 from bs4 import BeautifulSoup
+from createFile import createFile
 
 
 def Soupify(source, storeList):
@@ -17,3 +18,4 @@ def Soupify(source, storeList):
             'span', {'class': 'c-address-postal-code'}).text
     storeList.append(d)
     print(storeList)
+    createFile(storeList)

@@ -1,4 +1,5 @@
 import csv
+import os
 
 
 def createFile(storeList):
@@ -7,4 +8,9 @@ def createFile(storeList):
         writer = csv.DictWriter(file, fieldnames=storeColumns)
         writer.writeheader()
         for data in storeList:
-            writer.writerow(data)
+            if any(field.strip() for field in data):
+                writer.writerow(data)
+
+
+def testingCircular():
+    os.system(r'store.csv')

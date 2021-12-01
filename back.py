@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
 from soup import Soupify
+from createFile import testingCircular
 
 
 def Start(*args):
@@ -21,6 +22,7 @@ def Start(*args):
         source = driver.page_source
         driver.quit()
         Soupify(source, storeList)
+    testingCircular()
 
 
-Start('0001', '1257')
+Start('0001', 1257, 1231)

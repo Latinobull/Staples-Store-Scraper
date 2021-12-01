@@ -8,7 +8,8 @@ def Soupify(source, storeList):
     # print(all)
 
     d = {}
-    d['Store#'] = soup.find('div', {'class': 'Core-storeId'}).text
+    d['Store#'] = soup.find(
+        'div', {'class': 'Core-storeId'}).text.replace('Store #', '')
     for item in all:
         d['Street'] = item.find(
             'span', {'class': 'c-address-street-1'}).text

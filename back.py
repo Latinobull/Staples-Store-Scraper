@@ -23,6 +23,3 @@ def Start(*args):
         driver.quit()
         Soupify(source, storeList)
     testingCircular()
-
-
-Start('0001', 1257, 1231, 1795, 1232)

@@ -4,9 +4,9 @@ from back import Start
 
 
 def runThis():
-
-    print(storeNumberValue.get())
-    # Start()
+    numbers = storeNumberValue.get()
+    numbers = numbers.split(sep=',')
+    Start(numbers)
 
 
 root = Tk()

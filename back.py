@@ -5,10 +5,10 @@ from soup import Soupify
 from createFile import testingCircular
 
 
-def Start(*args):
+def Start(numbers):
     PATH = "C:\Program Files (x86)\chromedriver.exe"
     storeList = []
-    for store in args:
+    for store in numbers:
 
         PAGE = f"https://stores.staples.com/search?storeId={store}&qp={store}&l=en"
 

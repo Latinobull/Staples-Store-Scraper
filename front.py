@@ -5,7 +5,12 @@ from back import Start
 
 def runThis():
     numbers = storeNumberValue.get()
+    newNumber = numbers.lower()
+    if newNumber.islower():
+        print('Nnumbers only please')
+        return
     numbers = numbers.split(sep=',')
+
     Start(numbers)
 
 

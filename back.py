@@ -2,7 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
 from soup import Soupify
-from createFile import testingCircular
+from createFile import showFile
 from selenium.common.exceptions import NoSuchElementException
 
 
@@ -26,5 +26,6 @@ def Start(numbers):
             Soupify(source, storeList)
     except NoSuchElementException:
         print(f'Store {store} doesnt exist')
+        driver.quit()
         return
-    testingCircular()
+    showFile()

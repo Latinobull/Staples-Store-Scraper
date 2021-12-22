@@ -12,5 +12,5 @@ def createFile(storeList):
                 writer.writerow(data)
 
 
-def testingCircular():
+def ShowFile():
     os.system(r'store.csv')
